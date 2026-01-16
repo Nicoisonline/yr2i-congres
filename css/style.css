@@ -1,0 +1,303 @@
+/* =========================================
+   Variables et Reset
+========================================= */
+:root {
+    --primary-color: #BC3E97;   /* Magenta */
+    --secondary-color: #2E428F; /* Bleu foncé */
+    --accent-color: #9FA8DA;    /* Bleu clair */
+    --light-color: #FFFFFF;     /* Blanc des */
+    --dark-color: #333333;      /* Gris foncé pour le texte standard */
+    --bg-light: #F4F7F6;        /* Fond clair pour les sections */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--bg-light);
+}
+
+/* =========================================
+   En-tête
+========================================= */
+header {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style spécifique pour le logo dans le menu */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   Sections
+========================================= */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    height: 80vh;
+    background-color: var(--bg-light);
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* =========================================
+   Boutons
+========================================= */
+button {
+    padding: 12px 30px;
+    background-color: var(--primary-color); 
+    color: var(--light-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px; 
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #a03580; 
+    transform: translateY(-2px); 
+}
+
+/* =========================================
+   Pied de page
+========================================= */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* =========================================
+   Style de la Galerie Photo (Grid)
+========================================= */
+.gallery-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* =========================================
+   Style du Programme (Planning)
+========================================= */
+.programme-container {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.day-block {
+    margin-bottom: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.day-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.schedule-item {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #eee;
+}
+
+.time {
+    font-weight: bold;
+    color: var(--secondary-color);
+    min-width: 100px;
+}
+
+.details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.speaker {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   Style de la page Équipe
+========================================= */
+.team-container {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.org-chart {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    margin-top: 2rem;
+}
+
+/* =========================================
+   Section Hero avec Diaporama
+========================================= */
+.hero {
+    position: relative; 
+    height: 80vh;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Conteneur des images */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+/* Style des images individuelles */
+.hero-slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+}
+
+/* L'image qui a la classe 'active' devient visible */
+.hero-slideshow img.active {
+    opacity: 1;
+}
+
+/* Filtre sombre (Overlay) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.6);
+    z-index: 2; 
+}
+
+/* Contenu Texte */
+.hero-content {
+    position: relative;
+    z-index: 3; 
+    color: var(--light-color);
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
